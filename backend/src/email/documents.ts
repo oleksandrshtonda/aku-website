@@ -30,7 +30,7 @@ export const documents: Documents = {
   },
   kennelCertificate: {
     ua: 'Свідоцтво розплідника',
-    en: 'Kernel Certificate',
+    en: 'Kennel Certificate',
   },
   championCertificate: {
     ua: 'Сертифікат чемпіону',
