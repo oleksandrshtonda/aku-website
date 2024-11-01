@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-const ALLOWED_LANGS = ['en', 'pl', 'ua'];
+const ALLOWED_LANGS = ['en', 'pl', 'uk'];
 
 interface LanguageState {
   language: string;
@@ -25,6 +25,10 @@ const languageSlice = createSlice({
   initialState,
   reducers: {
     setLanguage: (state, action: PayloadAction<string>) => {
+      if (ALLOWED_LANGS.indexOf(action.payload) === -1) {
+        state.language = 'en';
+      }
+      
       state.language = action.payload;
     },
   },
