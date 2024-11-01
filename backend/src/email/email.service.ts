@@ -15,19 +15,15 @@ export class EmailService {
     });
 
     try {
-      const info = await transporter.sendMail({
+      await transporter.sendMail({
         from: SEND_EMAIL.fromEmail,
         to: SEND_EMAIL.toEmail,
         subject: 'Нове замовлення!',
         html: OrderMarkup.get(data),
       });
 
-      console.log(info);
-
       return true;
     } catch (error) {
-      console.log(error);
-
       return false;
     }
   }
