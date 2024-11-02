@@ -4,5 +4,7 @@
   "header.navigation.officialdom": "Офіциоз",
   "header.navigation.kennels": "Розплідники",
   "header.navigation.orderDocuments": "Замовити документи",
-  "header.navigation.contacts": "Контаки"
+  "header.navigation.contacts": "Контаки",
+
+  "footer.author": "Цей вебсайт був створений розробником Олександр Штонда"
 }

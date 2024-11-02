@@ -1,0 +1,30 @@
+.lang-switcher {
+  display: flex;
+  gap: 8px;
+
+  &__button {
+    width: 64px;
+    height: 38px;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    background-position: 50% 50%;
+    filter: brightness(0.6);
+    transition: filter 0.2s linear;
+
+    &--en {
+      background-image: url("../../assets/header/flag_en.png");
+    }
+
+    &--uk {
+      background-image: url("../../assets/header/flag_uk.png");
+    }
+
+    &--active {
+      filter: brightness(1);
+    }
+
+    &:hover {
+      filter: brightness(1);
+    }
+  }
+}
