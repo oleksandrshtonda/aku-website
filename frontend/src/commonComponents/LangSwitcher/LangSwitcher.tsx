@@ -13,8 +13,6 @@ export const LangSwitcher: React.FC<Props> = ({ belongsTo }) => {
     return classNames(`${belongsTo}__lang-switcher`, 'lang-switcher');
   }
   
-  console.log(lang)
-  
   const setLangHandler = (lang: string) => {
     i18next.changeLanguage(lang);
     setLang(lang);

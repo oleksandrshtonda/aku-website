@@ -2,8 +2,9 @@
   "header.navigation.home": "Home",
   "header.navigation.news": "News",
   "header.navigation.officialdom": "Officialdom",
+  "header.navigation.ourPartners": "Our partners",
   "header.navigation.kennels": "Kennels",
-  "header.navigation.orderDocuments": "Order Documents",
+  "header.navigation.orderDocuments": "Order documents",
   "header.navigation.contacts": "Contacts",
 
   "footer.author": "This website was created by Oleksandr Shtonda"

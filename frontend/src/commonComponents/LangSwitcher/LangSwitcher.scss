@@ -1,6 +1,6 @@
 .lang-switcher {
   display: flex;
-  gap: 8px;
+  gap: 16px;
 
   &__button {
     width: 64px;
@@ -8,7 +8,7 @@
     border: 1px solid #1f1f1f;
     border-radius: 8px;
     background-position: 50% 50%;
-    filter: brightness(0.6);
+    filter: brightness(0.8);
     transition: filter 0.2s linear;
 
     &--en {

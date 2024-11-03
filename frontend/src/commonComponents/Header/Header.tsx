@@ -44,6 +44,12 @@ export const Header: React.FC = () => {
             </li>
             
             <li className="nav__item">
+              <NavLink to={'/our-partners'} className={getClassNames}>
+                {t('header.navigation.ourPartners')}
+              </NavLink>
+            </li>
+            
+            <li className="nav__item">
               <NavLink to={'/kennels'} className={getClassNames}>
                 {t('header.navigation.kennels')}
               </NavLink>
