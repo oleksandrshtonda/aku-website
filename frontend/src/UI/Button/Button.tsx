@@ -9,9 +9,10 @@ interface Props {
   type: ButtonType;
   belongsTo?: string;
   children: ReactNode;
+  submit: boolean;
 }
 
-export const Button: React.FC<Props> = ({ callback, type, children, belongsTo }) => {
+export const Button: React.FC<Props> = ({ callback, type, children, belongsTo, submit }) => {
   const getClassName = () => {
     return classNames(
       {[`${belongsTo}__button`]: belongsTo && belongsTo?.length > 0},
@@ -25,6 +26,7 @@ export const Button: React.FC<Props> = ({ callback, type, children, belongsTo })
     <button
       className={getClassName()}
       onClick={callback}
+      type={submit ? 'submit' : 'button'}
     >
       {children}
     </button>

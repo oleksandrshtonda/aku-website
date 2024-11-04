@@ -1,6 +1,6 @@
 import './Input.scss';
 import { ChangeEvent, Dispatch, FC, HTMLInputTypeAttribute, ReactNode, SetStateAction } from 'react';
-import classNames from 'classnames';
+import { UtilsUI } from '../UtilsUI.ts';
 
 interface Props {
   children: ReactNode;
@@ -27,18 +27,10 @@ export const Input: FC<Props> = (
     setValue(event.target.value);
   }
   
-  const getClassNames = (element: string ): string => {
-    return classNames(
-      {[`${belongsTo}__${element}`]: belongsTo && belongsTo.length > 1},
-      element,
-      {[`${element}--error`]: error.length > 0}
-    )
-  }
-  
   return (
     <>
       <input
-        className={getClassNames('input')}
+        className={UtilsUI.getClassNames('input', belongsTo, error)}
         placeholder={children ? children.toString() : ''}
         type={type}
         value={value}
@@ -46,7 +38,7 @@ export const Input: FC<Props> = (
         required={required}
       />
       
-      <p className={getClassNames('under-text')}>
+      <p className={UtilsUI.getClassNames('under-text', belongsTo, error)}>
         {error}
       </p>
     </>

@@ -7,5 +7,23 @@
   "header.navigation.orderDocuments": "Order documents",
   "header.navigation.contacts": "Contacts",
 
-  "footer.author": "This website was created by Oleksandr Shtonda"
+  "footer.author": "This website was created by Oleksandr Shtonda",
+
+  "document.chooseLabel": "What do you want to order?",
+  "document.pedigree": "Pedigree",
+  "document.dogsBirthCertificate": "Dog's birth certificate",
+  "document.tribalCard": "Tribal card",
+  "document.certificateOfBreedingMale": "Certificate of breeding male",
+  "document.certificateOfBreedingFemale": "Certificate of breeding female",
+  "document.kennelCertificate": "Kennel Certificate",
+  "document.championCertificate": "Champion certificate",
+  "document.certificateOfWorkingQualities": "Certificate of working qualities",
+
+  "documentPage.title": "Order a document",
+  "documentPage.field.name": "Name",
+  "documentPage.field.surname": "Surname",
+  "documentPage.field.email": "E-mail",
+  "documentPage.field.phone": "Phone number",
+  "documentPage.field.fatherName": "",
+  "documentPage.order": "Order"
 }

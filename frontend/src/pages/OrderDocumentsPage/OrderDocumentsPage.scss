@@ -1,3 +1,22 @@
-.orderdocumentspage {
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  margin-top: 100px;
+  padding: 32px;
+  box-shadow: 0 .5em 1em -.125em #0a0a0a1a,0 0 0 1px #0a0a0a05;
+  border-radius: 32px;
+
+  &__heading {
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    margin-top: 16px;
+  }
+
+  &__button {
+    margin-top: 24px;
+  }
 }

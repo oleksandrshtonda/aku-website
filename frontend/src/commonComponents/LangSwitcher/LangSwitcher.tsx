@@ -16,6 +16,7 @@ export const LangSwitcher: React.FC<Props> = ({ belongsTo }) => {
   const setLangHandler = (lang: string) => {
     i18next.changeLanguage(lang);
     setLang(lang);
+    document.documentElement.lang = lang;
   }
   
   return (
