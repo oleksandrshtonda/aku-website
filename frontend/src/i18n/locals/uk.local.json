@@ -1,7 +1,29 @@
 {
   "header.navigation.home": "Головна",
+  "header.navigation.news": "Новини",
   "header.navigation.officialdom": "Офіциоз",
+  "header.navigation.ourPartners": "Партнери",
   "header.navigation.kennels": "Розплідники",
   "header.navigation.orderDocuments": "Замовити документи",
-  "header.navigation.contacts": "Контаки"
+  "header.navigation.contacts": "Контаки",
+
+  "footer.author": "Цей вебсайт був створений розробником Олександр Штонда",
+
+  "document.chooseLabel": "Що саме Ви хочете замовити?",
+  "document.pedigree": "Родовід",
+  "document.dogsBirthCertificate": "Свідоцтво про народження",
+  "document.tribalCard": "Племінна карта",
+  "document.certificateOfBreedingMale": "Сертифікат племінного кобеля",
+  "document.certificateOfBreedingFemale": "Сертифікат племінної суки",
+  "document.kennelCertificate": "Свідоцтво розплідника",
+  "document.championCertificate": "Сертифікат чемпіону",
+  "document.certificateOfWorkingQualities": "Сертифікат з робочих якостей",
+
+  "documentPage.title": "Замовити документ",
+  "documentPage.field.name": "Ім'я",
+  "documentPage.field.surname": "Прізвище",
+  "documentPage.field.email": "Електронна пошта",
+  "documentPage.field.phone": "Номер телефону",
+  "documentPage.field.fatherName": "По батькові",
+  "documentPage.order": "Замовити"
 }

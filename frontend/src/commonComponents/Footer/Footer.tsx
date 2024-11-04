@@ -1,14 +1,18 @@
 import './Footer.scss';
+import { useTranslation } from 'react-i18next';
 
 interface Props {}
 
 export const Footer: React.FC<Props> = () => {
+  const { t } = useTranslation();
   
   return (
     <footer className="footer">
-      {/*{ language === 'en' && 'This website was created by Oleksandr Shtonda' }*/}
-      {/*{ language === 'uk' && 'Цей вебсайт був створений розробником Олександр Штонда' }*/}
-      {/*{ language === 'pl' && 'Ta strona internetowa została stworzona przez Oleksandr Shtonda' }*/}
+      <div className="author">
+        <p className="author__label">
+          {t("footer.author")}
+        </p>
+      </div>
     </footer>
   );
 };
