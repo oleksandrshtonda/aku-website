@@ -3,6 +3,7 @@ import { CustomerData } from './customerData.interface';
 export class OrderMarkup {
   static get(data: CustomerData) {
     const { name, surname, phone, email, fatherName, documentType } = data;
+    console.log(data);
 
     return `
 <div style="max-width: 800px; margin: 100px auto 0;">

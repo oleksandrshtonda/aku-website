@@ -8,7 +8,7 @@ export class EmailController {
 
   @Post()
   async sendEmail(@Body() data: CustomerData): Promise<boolean> {
-    console.log(this);
+    console.log(data);
 
     return await this.emailService.sendMail(data);
   }
