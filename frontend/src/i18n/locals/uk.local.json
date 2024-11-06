@@ -25,5 +25,8 @@
   "documentPage.field.email": "Електронна пошта",
   "documentPage.field.phone": "Номер телефону",
   "documentPage.field.fatherName": "По батькові",
-  "documentPage.order": "Замовити"
+  "documentPage.order": "Замовити",
+
+  "notFoundPage.label": "Ой... Здається, сторінки не існує...",
+  "notFoundPage.button.text": "Перейти на головну сторінку"
 }

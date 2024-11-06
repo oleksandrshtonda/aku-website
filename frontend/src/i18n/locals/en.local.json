@@ -25,5 +25,8 @@
   "documentPage.field.email": "E-mail",
   "documentPage.field.phone": "Phone number",
   "documentPage.field.fatherName": "",
-  "documentPage.order": "Order"
+  "documentPage.order": "Order",
+
+  "notFoundPage.label": "Oops... This page doesn't seem to exist...",
+  "notFoundPage.button.text": "Go to the Home page"
 }
