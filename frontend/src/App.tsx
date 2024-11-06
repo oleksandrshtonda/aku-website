@@ -11,6 +11,7 @@ import { KennelsListPage } from './pages/KennelsListPage';
 import { OrderDocumentsPage } from './pages/OrderDocumentsPage';
 import { ContactsPage } from './pages/ContactsPage';
 import { OurPartnersPage } from './pages/OurPartnersPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -26,10 +27,11 @@ function App() {
           <Route path="/kennels" element={<KennelsListPage />} />
           <Route path="/order-documents" element={<OrderDocumentsPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="*" element={<NotFoundPage /> } />
         </Routes>
       </main>
     
-      <Footer />;
+      <Footer />
     </>
   )
 }
