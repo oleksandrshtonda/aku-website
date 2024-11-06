@@ -17,11 +17,16 @@ export const NotFoundPage: FC = () => {
       <img src={dogImage} alt="not found dog" />
       
       <p className="not-found-page__label">
-        { t("notFoundPage.label") }
+        {t("notFoundPage.label")}
       </p>
       
-      <Button belongsTo="not-found-page" callback={navigateToHomePage} type={'primary'} submit={false}>
-        { t("notFoundPage.button.text") }
+      <Button
+        belongsTo="not-found-page"
+        callback={navigateToHomePage}
+        type={'primary'}
+        submit={false}
+      >
+        {t("notFoundPage.button.text")}
       </Button>
     </div>
   );
