@@ -31,11 +31,11 @@ export const Header: React.FC = () => {
               </NavLink>
             </li>
             
-            <li className="nav__item">
-              <NavLink to={'/news'} className={getClassNames}>
-                {t('header.navigation.news')}
-              </NavLink>
-            </li>
+            {/*<li className="nav__item">*/}
+            {/*  <NavLink to={'/news'} className={getClassNames}>*/}
+            {/*    {t('header.navigation.news')}*/}
+            {/*  </NavLink>*/}
+            {/*</li>*/}
             
             <li className="nav__item">
               <NavLink to={'/officialdom'} className={getClassNames}>
@@ -43,29 +43,17 @@ export const Header: React.FC = () => {
               </NavLink>
             </li>
             
-            <li className="nav__item">
-              <NavLink to={'/our-partners'} className={getClassNames}>
-                {t('header.navigation.ourPartners')}
-              </NavLink>
-            </li>
+            {/*<li className="nav__item">*/}
+            {/*  <NavLink to={'/our-partners'} className={getClassNames}>*/}
+            {/*    {t('header.navigation.ourPartners')}*/}
+            {/*  </NavLink>*/}
+            {/*</li>*/}
             
-            <li className="nav__item">
-              <NavLink to={'/kennels'} className={getClassNames}>
-                {t('header.navigation.kennels')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/order-documents'} className={getClassNames}>
-                {t('header.navigation.orderDocuments')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/contacts'} className={getClassNames}>
-                {t('header.navigation.contacts')}
-              </NavLink>
-            </li>
+            {/*<li className="nav__item">*/}
+            {/*  <NavLink to={'/kennels'} className={getClassNames}>*/}
+            {/*    {t('header.navigation.kennels')}*/}
+            {/*  </NavLink>*/}
+            {/*</li>*/}
           </ul>
         </nav>
         
