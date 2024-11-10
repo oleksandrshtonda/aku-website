@@ -1,11 +1,7 @@
 import './Nav.scss';
 import { FC } from 'react';
 import { Link } from './Link';
-
-interface ILink {
-  href: string;
-  label: string;
-}
+import { ILink } from '../interfaces/ILink';
 
 interface Props {
   belongsTo: string;

@@ -1,7 +1,12 @@
 import './SubNav.scss';
+import { FC } from 'react';
 
-interface Props {}
+interface Props {
 
-export const SubNav: React.FC<Props> = () => {
-  return (<div className="subnav"></div>);
+}
+
+export const SubNav: FC<Props> = () => {
+  return (
+    <div className="sub-nav"></div>
+  );
 };

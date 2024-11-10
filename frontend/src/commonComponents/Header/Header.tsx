@@ -3,11 +3,7 @@ import '../../i18n';
 import image from '../../assets/aku-logo.png';
 import { LangSwitcher } from '../LangSwitcher';
 import { Nav } from '../Nav';
-
-interface ILink {
-  href: string;
-  label: string;
-}
+import { ILink } from '../interfaces/ILink.ts';
 
 const LINKS: ILink[] = [
   {

@@ -2,11 +2,7 @@ import './Footer.scss';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Nav } from '../Nav';
-
-interface ILink {
-  href: string;
-  label: string;
-}
+import { ILink } from '../interfaces/ILink.ts';
 
 const LINKS: ILink[] = [
   { href: '/', label: 'header.navigation.home' },
