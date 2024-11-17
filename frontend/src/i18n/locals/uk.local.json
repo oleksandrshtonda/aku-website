@@ -1,7 +1,20 @@
 {
   "header.navigation.home": "Головна",
   "header.navigation.news": "Новини",
+
   "header.navigation.officialdom": "Офіциоз",
+  "header.navigation.officialdom.breedingRules": "Племінне положення",
+  "header.navigation.officialdom.rulesOfEvents": "Положення проведення шоу і зоотехнічних заходів",
+  "header.navigation.officialdom.regulationsForHoldingSportsEvents": "Регламент проведення спортивних заходів",
+  "header.navigation.officialdom.RegulationsOnJudgesOnDogExterior": "Положення про суддів-експертів з екстерʼєру",
+  "header.navigation.officialdom.RegulationsOnJudgesOnWorkingQualities": "Положення про суддів з робочих якостей",
+  "header.navigation.officialdom.orders": "Накази",
+  "header.navigation.officialdom.regulations": "Статут",
+  "header.navigation.officialdom.protocols": "Протоколи",
+
+  "header.navigation.aboutUs": "Про нас",
+  "header.navigation.structure": "Структура",
+
   "header.navigation.ourPartners": "Партнери",
   "header.navigation.kennels": "Розплідники",
   "header.navigation.orderDocuments": "Замовити документи",

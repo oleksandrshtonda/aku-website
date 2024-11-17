@@ -27,45 +27,6 @@
   }
 }
 
-.nav {
-  &__links {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 32px;
-  }
-
-  &__link {
-    font-size: 20px;
-    text-decoration: none;
-    color: #1f1f1f;
-    position: relative;
-
-    &:after {
-      position: absolute;
-      bottom: -8px;
-      display: block;
-      height: 4px;
-      border-radius: 4px;
-      width: 100%;
-      background-color: #1f1f1f;
-      opacity: 0;
-      content: '';
-      transition: opacity 0.2s linear;
-    }
-
-    &:hover:after {
-      opacity: 0.2;
-    }
-
-    &--is-active {
-      &:after {
-        opacity: 0.8;
-      }
-    }
-  }
-}
-
 @media (max-width: 1220px) {
   .header__right-side {
     display: none;

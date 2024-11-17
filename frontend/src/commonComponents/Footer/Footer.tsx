@@ -2,12 +2,12 @@ import './Footer.scss';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Nav } from '../Nav';
-import { ILink } from '../interfaces/ILink.ts';
+import { ILinkWithSublinks } from '../interfaces/ILinkWithSublinks.ts';
 
-const LINKS: ILink[] = [
-  { href: '/', label: 'header.navigation.home' },
-  { href: '/order-documents', label: 'header.navigation.orderDocuments' },
-  { href: '/contacts', label: 'header.navigation.contacts' },
+const LINKS: ILinkWithSublinks[] = [
+  { href: '/', label: 'header.navigation.home', subLinks: [] },
+  { href: '/order-documents', label: 'header.navigation.orderDocuments', subLinks: [] },
+  { href: '/contacts', label: 'header.navigation.contacts', subLinks: [] },
 ];
 
 export const Footer: FC = () => {

@@ -7,11 +7,11 @@ import { Footer } from './commonComponents/Footer';
 import { MainPage } from './pages/MainPage';
 import { NewsPage } from './pages/NewsPage';
 import { OfficialdomPage } from './pages/OfficialdomPage';
-import { KennelsListPage } from './pages/KennelsListPage';
 import { OrderDocumentsPage } from './pages/OrderDocumentsPage';
 import { ContactsPage } from './pages/ContactsPage';
-import { OurPartnersPage } from './pages/OurPartnersPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { StructureOfOrganizationPage } from './pages/StructureOfOrganizationPage';
+import { AboutUsPage } from './pages/AboutUsPage';
 
 function App() {
   return (
@@ -23,8 +23,9 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/officialdom" element={<OfficialdomPage />} />
-          <Route path="/our-partners" element={<OurPartnersPage />} />
-          <Route path="/kennels" element={<KennelsListPage />} />
+          <Route path="/structure-of-organization" element={<StructureOfOrganizationPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          
           <Route path="/order-documents" element={<OrderDocumentsPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="*" element={<NotFoundPage /> } />
