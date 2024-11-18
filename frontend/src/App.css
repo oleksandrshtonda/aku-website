@@ -27,3 +27,9 @@ body {
   max-width: 1400px;
   margin: 0 auto;
 }
+
+@media (max-width: 1400px) {
+  .main {
+    max-width: 1000px;
+  }
+}

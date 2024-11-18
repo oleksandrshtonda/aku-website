@@ -41,5 +41,10 @@
   "documentPage.order": "Замовити",
 
   "notFoundPage.label": "Ой... Здається, сторінки не існує...",
-  "notFoundPage.button.text": "Перейти на головну сторінку"
+  "notFoundPage.button.text": "Перейти на головну сторінку",
+
+  "widgets.pdfViewer.prevBtnLabel": "Попередня",
+  "widgets.pdfViewer.nextBtnLabel": "Наступна",
+  "widgets.pdfViewer.pageLabel": "Сторінка",
+  "widgets.pdfViewer.ofLabel": "з"
 }

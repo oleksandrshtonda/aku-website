@@ -12,6 +12,7 @@ import { ContactsPage } from './pages/ContactsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { StructureOfOrganizationPage } from './pages/StructureOfOrganizationPage';
 import { AboutUsPage } from './pages/AboutUsPage';
+import { RegulationsPage } from './pages/RegulationsPage';
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/officialdom" element={<OfficialdomPage />} />
+          <Route path="/officialdom">
+            <Route path="" element={<OfficialdomPage />} />
+            <Route path="regulations" element={<RegulationsPage />} />
+            
+          </Route>
           <Route path="/structure-of-organization" element={<StructureOfOrganizationPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           
