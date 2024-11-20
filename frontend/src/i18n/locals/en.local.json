@@ -46,8 +46,8 @@
   "notFoundPage.label": "Oops... This page doesn't seem to exist...",
   "notFoundPage.button.text": "Go to the Home page",
 
-  "widgets.pdfViewer.prevBtnLabel": "Next",
-  "widgets.pdfViewer.nextBtnLabel": "Previous",
+  "widgets.pdfViewer.prevBtnLabel": "Previous",
+  "widgets.pdfViewer.nextBtnLabel": "Next",
   "widgets.pdfViewer.pageLabel": "Page",
   "widgets.pdfViewer.ofLabel": "of"
 }
