@@ -13,6 +13,7 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { StructureOfOrganizationPage } from './pages/StructureOfOrganizationPage';
 import { AboutUsPage } from './pages/AboutUsPage';
 import { RegulationsPage } from './pages/RegulationsPage';
+import { ProtocolsPage } from './pages/ProtocolsPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/officialdom">
             <Route path="" element={<OfficialdomPage />} />
             <Route path="regulations" element={<RegulationsPage />} />
+            <Route path="protocols" element={<ProtocolsPage />} />
             
           </Route>
           <Route path="/structure-of-organization" element={<StructureOfOrganizationPage />} />

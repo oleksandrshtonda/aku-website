@@ -17,7 +17,7 @@ const LINKS: ILinkWithSublinks[] = [
     label: 'header.navigation.officialdom',
     subLinks: [
       { href: 'officialdom/regulations', label: 'header.navigation.officialdom.regulations' },
-      { href: '', label: 'header.navigation.officialdom.protocols' },
+      { href: 'officialdom/protocols', label: 'header.navigation.officialdom.protocols' },
       { href: '', label: 'header.navigation.officialdom.breedingRules' },
       { href: '', label: 'header.navigation.officialdom.rulesOfEvents' },
       { href: '', label: 'header.navigation.officialdom.regulationsForHoldingSportsEvents' },

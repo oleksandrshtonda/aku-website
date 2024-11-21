@@ -49,5 +49,10 @@
   "widgets.pdfViewer.prevBtnLabel": "Previous",
   "widgets.pdfViewer.nextBtnLabel": "Next",
   "widgets.pdfViewer.pageLabel": "Page",
-  "widgets.pdfViewer.ofLabel": "of"
+  "widgets.pdfViewer.ofLabel": "of",
+
+  "protocolsPage.heading": "Protocols",
+  "protocolsPage.viewer.heading": "You are currently viewing",
+  "protocolsPage.viewer.closeButton": "Close",
+  "protocolsPage.protocol.viewButton": "View"
 }

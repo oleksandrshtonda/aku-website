@@ -46,5 +46,10 @@
   "widgets.pdfViewer.prevBtnLabel": "Попередня",
   "widgets.pdfViewer.nextBtnLabel": "Наступна",
   "widgets.pdfViewer.pageLabel": "Сторінка",
-  "widgets.pdfViewer.ofLabel": "з"
+  "widgets.pdfViewer.ofLabel": "з",
+
+  "protocolsPage.heading": "Протоколи",
+  "protocolsPage.viewer.heading": "Зараз ви переглядаєте",
+  "protocolsPage.viewer.closeButton": "Закрити",
+  "protocolsPage.protocol.viewButton": "Відкрити"
 }
