@@ -7,15 +7,21 @@ import { useTranslation } from 'react-i18next';
 import { TFunction } from 'i18next';
 
 interface LinkToDoc {
-  label: string;
-  url: string;
+  en: { label: string; url: string; }
+  uk: { label: string; url: string; }
   key: string;
 }
 
 const docs: LinkToDoc[] = [
   {
-    label: 'Regulations',
-    url: regulationsUrl,
+    en: {
+      label: 'Regulations',
+      url: regulationsUrl,
+    },
+    uk: {
+      label: 'Статут',
+      url: regulationsUrl,
+    },
     key: 'regulations',
   }
 ];
@@ -27,10 +33,11 @@ const getUrlByKey = (key: LinkToDoc['key']): LinkToDoc => {
 const renderDocs = (
   doc: LinkToDoc,
   callBackForButton: (key: LinkToDoc['key']) => void,
-  t: TFunction<"translation", undefined>
+  t: TFunction<"translation", undefined>,
+  lang: 'en' | 'uk'
 ) => (
   <div className="links-to-documents__link link">
-    <h2 className="link__label">{doc.label}</h2>
+    <h2 className="link__label">{doc[lang].label}</h2>
     
     <Button
       callback={() => callBackForButton(doc.key)}
@@ -46,7 +53,8 @@ const renderDocs = (
 
 export const ProtocolsPage: FC = () => {
   const [ currentDoc, setCurrentDoc ] = useState<string | null>(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language as 'en' | 'uk';
   
   const onClickHandler = (key: string | null): void => {
     setCurrentDoc(key);
@@ -61,7 +69,7 @@ export const ProtocolsPage: FC = () => {
       {currentDoc == null && (
         <div className="links-to-documents">
           {docs.map(doc => {
-            return renderDocs(doc, onClickHandler, t);
+            return renderDocs(doc, onClickHandler, t, lang);
           })}
         </div>
       )}
@@ -69,7 +77,7 @@ export const ProtocolsPage: FC = () => {
       {currentDoc !== null && (
         <div className="controls">
           <p>
-            {t("protocolsPage.viewer.heading")} {getUrlByKey(currentDoc).label}
+            {t("protocolsPage.viewer.heading")} {getUrlByKey(currentDoc)[lang].label}
           </p>
           
           <Button
@@ -82,7 +90,7 @@ export const ProtocolsPage: FC = () => {
         </div>
       )}
       
-      {currentDoc && <PDFViewer uriToPDF={getUrlByKey(currentDoc).url} />}
+      {currentDoc && <PDFViewer uriToPDF={getUrlByKey(currentDoc)[lang].url} />}
     </>
   );
 };
