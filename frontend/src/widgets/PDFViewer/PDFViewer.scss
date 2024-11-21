@@ -1,0 +1,35 @@
+.pdf-viewer {
+  margin: 48px 0;
+  border-radius: 16px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+
+  hr {
+    height: 1px;
+    background-color: #bfbfbf;
+    border: none;
+  }
+}
+
+.pagination-controls {
+  width: 100%;
+  padding: 24px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+
+  button {
+    padding: 16px;
+    border: none;
+
+    &:first-child:hover {
+      background-color: #dfdfdf;
+    }
+  }
+
+  span {
+    padding-top: 16px;
+  }
+
+
+}

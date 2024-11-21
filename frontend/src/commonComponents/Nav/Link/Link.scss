@@ -1,0 +1,33 @@
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #1f1f1f;
+  padding: 20px 0;
+
+  //&:after {
+  //  position: absolute;
+  //  bottom: -8px;
+  //  display: block;
+  //  height: 4px;
+  //  border-radius: 4px;
+  //  width: 100%;
+  //  background-color: #1f1f1f;
+  //  opacity: 0;
+  //  content: '';
+  //  transition: opacity 0.2s linear;
+  //}
+  //
+  //&:hover:after {
+  //  opacity: 0.2;
+  //}
+  //
+  //&--is-active {
+  //  &:after {
+  //    opacity: 0.8;
+  //  }
+  //}
+}

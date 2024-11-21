@@ -1,13 +1,28 @@
 {
   "header.navigation.home": "Home",
   "header.navigation.news": "News",
+
   "header.navigation.officialdom": "Officialdom",
+  "header.navigation.officialdom.breedingRules": "Breeding rules",
+  "header.navigation.officialdom.rulesOfEvents": "Rules of holding exhibitions and zootechnical events",
+  "header.navigation.officialdom.regulationsForHoldingSportsEvents": "Regulations for holding sports events",
+  "header.navigation.officialdom.RegulationsOnJudgesOnDogExterior": "Regulations on judges on dog exterior",
+  "header.navigation.officialdom.RegulationsOnJudgesOnWorkingQualities": "Regulations on judges on working qualities of dogs",
+  "header.navigation.officialdom.orders": "Orders",
+  "header.navigation.officialdom.regulations": "Regulations",
+  "header.navigation.officialdom.protocols": "Protocols",
+
+  "header.navigation.aboutUs": "About us",
+  "header.navigation.structure": "Structure",
+
   "header.navigation.ourPartners": "Our partners",
   "header.navigation.kennels": "Kennels",
   "header.navigation.orderDocuments": "Order documents",
   "header.navigation.contacts": "Contacts",
 
-  "footer.author": "This website was created by Oleksandr Shtonda",
+
+  "footer.author": "Developer: ",
+
 
   "document.chooseLabel": "What do you want to order?",
   "document.pedigree": "Pedigree",
@@ -27,6 +42,17 @@
   "documentPage.field.fatherName": "",
   "documentPage.order": "Order",
 
+
   "notFoundPage.label": "Oops... This page doesn't seem to exist...",
-  "notFoundPage.button.text": "Go to the Home page"
+  "notFoundPage.button.text": "Go to the Home page",
+
+  "widgets.pdfViewer.prevBtnLabel": "Previous",
+  "widgets.pdfViewer.nextBtnLabel": "Next",
+  "widgets.pdfViewer.pageLabel": "Page",
+  "widgets.pdfViewer.ofLabel": "of",
+
+  "protocolsPage.heading": "Protocols",
+  "protocolsPage.viewer.heading": "You are currently viewing",
+  "protocolsPage.viewer.closeButton": "Close",
+  "protocolsPage.protocol.viewButton": "View"
 }

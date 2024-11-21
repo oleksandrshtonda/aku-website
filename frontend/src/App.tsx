@@ -7,11 +7,13 @@ import { Footer } from './commonComponents/Footer';
 import { MainPage } from './pages/MainPage';
 import { NewsPage } from './pages/NewsPage';
 import { OfficialdomPage } from './pages/OfficialdomPage';
-import { KennelsListPage } from './pages/KennelsListPage';
 import { OrderDocumentsPage } from './pages/OrderDocumentsPage';
 import { ContactsPage } from './pages/ContactsPage';
-import { OurPartnersPage } from './pages/OurPartnersPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { StructureOfOrganizationPage } from './pages/StructureOfOrganizationPage';
+import { AboutUsPage } from './pages/AboutUsPage';
+import { RegulationsPage } from './pages/RegulationsPage';
+import { ProtocolsPage } from './pages/ProtocolsPage';
 
 function App() {
   return (
@@ -22,9 +24,15 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/officialdom" element={<OfficialdomPage />} />
-          <Route path="/our-partners" element={<OurPartnersPage />} />
-          <Route path="/kennels" element={<KennelsListPage />} />
+          <Route path="/officialdom">
+            <Route path="" element={<OfficialdomPage />} />
+            <Route path="regulations" element={<RegulationsPage />} />
+            <Route path="protocols" element={<ProtocolsPage />} />
+            
+          </Route>
+          <Route path="/structure-of-organization" element={<StructureOfOrganizationPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          
           <Route path="/order-documents" element={<OrderDocumentsPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="*" element={<NotFoundPage /> } />

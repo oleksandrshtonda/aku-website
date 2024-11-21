@@ -1,19 +1,44 @@
+import { FC } from 'react';
 import './Header.scss';
 import '../../i18n';
-import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
-import classNames from 'classnames';
-
 import image from '../../assets/aku-logo.png';
 import { LangSwitcher } from '../LangSwitcher';
+import { Nav } from '../Nav';
+import { ILinkWithSublinks } from '../interfaces/ILinkWithSublinks.ts';
 
-export const Header: React.FC = () => {
-  const { t } = useTranslation();
-  
-  const getClassNames = ({ isActive }: { isActive: boolean }) => {
-    return classNames('nav__link', { 'nav__link--is-active': isActive });
-  }
-  
+const LINKS: ILinkWithSublinks[] = [
+  {
+    href: '/',
+    label: 'header.navigation.home',
+    subLinks: [],
+  },
+  {
+    href: '/officialdom',
+    label: 'header.navigation.officialdom',
+    subLinks: [
+      { href: 'officialdom/regulations', label: 'header.navigation.officialdom.regulations' },
+      { href: 'officialdom/protocols', label: 'header.navigation.officialdom.protocols' },
+      { href: '', label: 'header.navigation.officialdom.breedingRules' },
+      { href: '', label: 'header.navigation.officialdom.rulesOfEvents' },
+      { href: '', label: 'header.navigation.officialdom.regulationsForHoldingSportsEvents' },
+      { href: '', label: 'header.navigation.officialdom.RegulationsOnJudgesOnDogExterior' },
+      { href: '', label: 'header.navigation.officialdom.RegulationsOnJudgesOnWorkingQualities' },
+      { href: '', label: 'header.navigation.officialdom.orders' },
+    ],
+  },
+  {
+    href: '/structure-of-organization',
+    label: 'header.navigation.structure',
+    subLinks: [],
+  },
+  {
+    href: '/about-us',
+    label: 'header.navigation.aboutUs',
+    subLinks: [],
+  },
+];
+
+export const Header: FC = () => {
   return (
     <header className="header">
       <img
@@ -23,51 +48,7 @@ export const Header: React.FC = () => {
       />
       
       <div className="header__right-side">
-        <nav className="header__nav nav">
-          <ul className="nav__links">
-            <li className="nav__item">
-              <NavLink to={'/'} className={getClassNames}>
-                {t('header.navigation.home')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/news'} className={getClassNames}>
-                {t('header.navigation.news')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/officialdom'} className={getClassNames}>
-                {t('header.navigation.officialdom')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/our-partners'} className={getClassNames}>
-                {t('header.navigation.ourPartners')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/kennels'} className={getClassNames}>
-                {t('header.navigation.kennels')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/order-documents'} className={getClassNames}>
-                {t('header.navigation.orderDocuments')}
-              </NavLink>
-            </li>
-            
-            <li className="nav__item">
-              <NavLink to={'/contacts'} className={getClassNames}>
-                {t('header.navigation.contacts')}
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Nav belongsTo={'header'} links={LINKS} />
         
         <LangSwitcher belongsTo={'header'} />
       </div>

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  cursor: url("./assets/cursors/cursor-dog.png"), auto;
 }
 
 html {
@@ -25,4 +26,10 @@ body {
   padding: 120px 40px 24px;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+  .main {
+    max-width: 1000px;
+  }
 }
