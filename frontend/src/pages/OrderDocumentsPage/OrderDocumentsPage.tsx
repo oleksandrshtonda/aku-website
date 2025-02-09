@@ -43,6 +43,8 @@ export const OrderDocumentsPage: FC = () => {
   }, []);
   
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const settersOfTheForm = [setName, setSurname, setEmail, setPhone, setFatherName, setDocumentType];
+    settersOfTheForm.forEach(setter => setter(v => v.trim()));
     event.preventDefault();
     
     if (documentType === 'document.chooseLabel') {
@@ -71,25 +73,59 @@ export const OrderDocumentsPage: FC = () => {
           {t("documentPage.title")}
         </h2>
         
-        <Input type={'text'} value={name} setValue={setName} belongsTo={'form'} required={true} error={''}>
+        <Input
+          type={'text'}
+          value={name}
+          setValue={setName}
+          belongsTo={'form'}
+          required={true}
+          error={''}
+        >
           {t("documentPage.field.name")}
         </Input>
         
-        <Input type={'text'} value={surname} setValue={setSurname} belongsTo={'form'} required={true} error={''}>
+        <Input
+          type={'text'}
+          value={surname}
+          setValue={setSurname}
+          belongsTo={'form'}
+          required={true}
+          error={''}
+        >
           {t("documentPage.field.surname")}
         </Input>
         
         {lang === 'uk' && (
-            <Input type={'text'} value={fatherName} setValue={setFatherName} belongsTo={'form'} required={true} error={''}>
+            <Input type={'text'}
+              value={fatherName}
+              setValue={setFatherName}
+              belongsTo={'form'}
+              required={true}
+              error={''}
+            >
               {t("documentPage.field.fatherName")}
             </Input>
           )}
         
-        <Input type={'text'} value={email} setValue={setEmail} belongsTo={'form'} required={true} error={''}>
+        <Input
+          type={'text'}
+          value={email}
+          setValue={setEmail}
+          belongsTo={'form'}
+          required={true}
+          error={''}
+        >
           {t("documentPage.field.email")}
         </Input>
         
-        <Input type={'phone'} value={phone} setValue={setPhone} belongsTo={'form'} required={true} error={''}>
+        <Input
+          type={'phone'}
+          value={phone}
+          setValue={setPhone}
+          belongsTo={'form'}
+          required={true}
+          error={''}
+        >
           {t("documentPage.field.phone")}
         </Input>
         
@@ -101,7 +137,12 @@ export const OrderDocumentsPage: FC = () => {
           setValue={setDocumentType}
         />
         
-        <Button callback={() => {}} type="primary" belongsTo="form" submit={true} >
+        <Button
+          callback={() => {}}
+          type="primary"
+          belongsTo="form"
+          submit={true}
+        >
           {t('documentPage.order')}
         </Button>
       </form>

@@ -1,4 +1,6 @@
 {
+  "system.lang": "en",
+
   "header.navigation.home": "Home",
   "header.navigation.news": "News",
 
@@ -20,9 +22,7 @@
   "header.navigation.orderDocuments": "Order documents",
   "header.navigation.contacts": "Contacts",
 
-
   "footer.author": "Developer: ",
-
 
   "document.chooseLabel": "What do you want to order?",
   "document.pedigree": "Pedigree",
@@ -41,7 +41,6 @@
   "documentPage.field.phone": "Phone number",
   "documentPage.field.fatherName": "",
   "documentPage.order": "Order",
-
 
   "notFoundPage.label": "Oops... This page doesn't seem to exist...",
   "notFoundPage.button.text": "Go to the Home page",

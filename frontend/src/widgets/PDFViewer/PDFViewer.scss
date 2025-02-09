@@ -1,4 +1,5 @@
 .pdf-viewer {
+  position: relative;
   margin: 48px 0;
   border-radius: 16px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
@@ -30,6 +31,4 @@
   span {
     padding-top: 16px;
   }
-
-
 }

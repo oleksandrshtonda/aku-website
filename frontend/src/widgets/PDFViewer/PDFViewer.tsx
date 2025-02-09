@@ -2,9 +2,10 @@ import './PDFViewer.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { FC, useState } from 'react';
-import { Button } from '../../UI/Button';
 import { Document, Page } from 'react-pdf';
 import { useTranslation } from 'react-i18next';
+import { Button } from '../../UI/Button';
+import LoaderBox from '../loader/loader.component.tsx';
 
 interface Props {
   uriToPDF: string,
@@ -40,7 +41,10 @@ export const PDFViewer: FC<Props> = ({ uriToPDF }) => {
   }
   
   return (
-    <div className="pdf-viewer" style={stylesForDoc}>
+    <div
+      className="pdf-viewer"
+      style={stylesForDoc}
+    >
       <div className="pagination-controls">
         <Button callback={goToPrevPage} type={'secondary'} submit={false}>
           {t('widgets.pdfViewer.prevBtnLabel')}
@@ -57,8 +61,17 @@ export const PDFViewer: FC<Props> = ({ uriToPDF }) => {
       
       <hr />
       
-      <Document file={uriToPDF} onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={currentPage} onLoadSuccess={onPageLoadSuccess} />
+      <Document
+        file={uriToPDF}
+        onLoadSuccess={onDocumentLoadSuccess}
+        loading={<LoaderBox loaderType="falling-lines" />}
+      >
+        <Page
+          pageNumber={currentPage}
+          onLoadSuccess={onPageLoadSuccess}
+          renderTextLayer={true}
+          loading={<LoaderBox loaderType="falling-lines" />}
+        />
       </Document>
     </div>
   );

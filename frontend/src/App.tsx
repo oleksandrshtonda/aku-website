@@ -28,11 +28,10 @@ function App() {
             <Route path="" element={<OfficialdomPage />} />
             <Route path="regulations" element={<RegulationsPage />} />
             <Route path="protocols" element={<ProtocolsPage />} />
-            
           </Route>
+          
           <Route path="/structure-of-organization" element={<StructureOfOrganizationPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          
           <Route path="/order-documents" element={<OrderDocumentsPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="*" element={<NotFoundPage /> } />

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import './Header.scss';
 import '../../i18n';
-import image from '../../assets/aku-logo.png';
+import image from '../../assets/wbf-logo.png';
 import { LangSwitcher } from '../LangSwitcher';
 import { Nav } from '../Nav';
 import { ILinkWithSublinks } from '../interfaces/ILinkWithSublinks.ts';
@@ -44,7 +44,7 @@ export const Header: FC = () => {
       <img
         className="header__logo"
         src={image}
-        alt="AKU logo"
+        alt="WBF logo"
       />
       
       <div className="header__right-side">

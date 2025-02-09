@@ -1,6 +1,6 @@
 import './ProtocolsPage.scss';
 import { FC, useState } from 'react';
-import regulationsUrl from '../../documents/pdf/Statut.pdf';
+import regulationsUrl from '../../documents/pdf/statut_uk.pdf';
 import { Button } from '../../UI/Button';
 import { PDFViewer } from '../../widgets/PDFViewer';
 import { useTranslation } from 'react-i18next';
