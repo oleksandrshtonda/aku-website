@@ -21,6 +21,13 @@ export class EmailService {
         subject: 'Нове замовлення!',
         html: OrderMarkup.get(data),
       });
+      
+      await transporter.sendMail({
+        from: SEND_EMAIL.fromEmail,
+        to: data.email,
+        subject: data.fatherName ? 'Ви зробили замовлення!' : `You have ordered a ${data.documentType.en}`,
+        html: OrderMarkup.getForClient(data),
+      })
 
       return true;
     } catch (error) {
