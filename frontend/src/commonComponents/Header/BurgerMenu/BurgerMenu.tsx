@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import './BurgerMenu.scss';
+
 import { ILinkWithSublinks } from '../../interfaces/ILinkWithSublinks.ts';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
+import BurgerMenuLink from './BurgerMenuLink.tsx';
 
 interface Props {
   links: ILinkWithSublinks[],
@@ -22,14 +23,16 @@ const BurgerMenu: FC<Props> = ({
   
   return (
     <div className={classes}>
-      { links.map(link => (
-        <Link
-          to={link.href}
-          key={link.label}
-        >
-          {t(link.label)}
-        </Link>
-      )) }
+      <ul>
+        { links.map(link => (
+          <BurgerMenuLink
+            href={link.href}
+            subLinks={link.subLinks}
+            label={t(link.label)}
+            key={link.label}
+          />
+        )) }
+      </ul>
     </div>
   );
 };

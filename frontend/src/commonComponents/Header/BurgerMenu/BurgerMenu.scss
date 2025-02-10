@@ -22,4 +22,34 @@
     opacity: 1;
     pointer-events: all;
   }
+
+  & > ul {
+    list-style: none;
+  }
+}
+
+.burger-nav {
+  &__item {
+    display: flex;
+    gap: 8px;
+
+    .item {
+      &__link {
+        text-decoration: none;
+        color: #333;
+        font-size: 20px;
+      }
+
+      &__btn {
+        width: 20px;
+        height: 20px;
+      }
+
+      &__sublinks{
+        margin-top: 20px;
+        margin-left: -60px;
+        max-width: 200px;
+      }
+    }
+  }
 }
