@@ -32,3 +32,14 @@
     display: none;
   }
 }
+
+@media (max-width: 500px) {
+  .header {
+    padding: 0 24px;
+
+    &__logo {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}

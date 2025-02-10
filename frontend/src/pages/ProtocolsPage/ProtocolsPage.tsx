@@ -1,10 +1,13 @@
 import './ProtocolsPage.scss';
 import { FC, useState } from 'react';
-import regulationsUrl from '../../documents/pdf/statut_uk.pdf';
+import { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
+
+import regulationsUkUrl from '../../documents/pdf/statut_uk.pdf';
+import regulationsEnUrl from '../../documents/pdf/statut_en.pdf';
+
 import { Button } from '../../UI/Button';
 import { PDFViewer } from '../../widgets/PDFViewer';
-import { useTranslation } from 'react-i18next';
-import { TFunction } from 'i18next';
 
 interface LinkToDoc {
   en: { label: string; url: string; }
@@ -16,11 +19,11 @@ const docs: LinkToDoc[] = [
   {
     en: {
       label: 'Regulations',
-      url: regulationsUrl,
+      url: regulationsEnUrl,
     },
     uk: {
       label: 'Статут',
-      url: regulationsUrl,
+      url: regulationsUkUrl,
     },
     key: 'regulations',
   }
@@ -36,7 +39,7 @@ const renderDocs = (
   t: TFunction<"translation", undefined>,
   lang: 'en' | 'uk'
 ) => (
-  <div className="links-to-documents__link link">
+  <article className="links-to-documents__link link" key={doc.key}>
     <h2 className="link__label">{doc[lang].label}</h2>
     
     <Button
@@ -47,9 +50,8 @@ const renderDocs = (
     >
       {t("protocolsPage.protocol.viewButton")}
     </Button>
-  </div>
+  </article>
 )
-
 
 export const ProtocolsPage: FC = () => {
   const [ currentDoc, setCurrentDoc ] = useState<string | null>(null);

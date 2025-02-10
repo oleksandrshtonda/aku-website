@@ -1,12 +1,14 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import './Header.scss';
 import '../../i18n';
 import image from '../../assets/wbf-logo.png';
 import { LangSwitcher } from '../LangSwitcher';
 import { Nav } from '../Nav';
 import { ILinkWithSublinks } from '../interfaces/ILinkWithSublinks.ts';
+import { Link } from 'react-router-dom';
+import BurgerButton from '../../UI/BurgerButton/burger-button.component.tsx';
 
-const LINKS: ILinkWithSublinks[] = [
+export const LINKS: ILinkWithSublinks[] = [
   {
     href: '/',
     label: 'header.navigation.home',
@@ -38,20 +40,35 @@ const LINKS: ILinkWithSublinks[] = [
   },
 ];
 
-export const Header: FC = () => {
+interface Props {
+  active: boolean;
+  setActive: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Header: FC<Props> = ({
+  active,
+  setActive,
+}) => {
   return (
     <header className="header">
-      <img
-        className="header__logo"
-        src={image}
-        alt="WBF logo"
-      />
+      <Link to={'/'}>
+        <img
+          className="header__logo"
+          src={image}
+          alt="WBF logo"
+        />
+      </Link>
       
       <div className="header__right-side">
         <Nav belongsTo={'header'} links={LINKS} />
         
         <LangSwitcher belongsTo={'header'} />
       </div>
+      
+      <BurgerButton
+        active={active}
+        setActive={setActive}
+      />
     </header>
   );
 }

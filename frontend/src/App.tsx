@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
-import { Header } from './commonComponents/Header';
+import { Header, LINKS } from './commonComponents/Header';
 import { Footer } from './commonComponents/Footer';
 
 import { MainPage } from './pages/MainPage';
@@ -14,11 +14,15 @@ import { StructureOfOrganizationPage } from './pages/StructureOfOrganizationPage
 import { AboutUsPage } from './pages/AboutUsPage';
 import { RegulationsPage } from './pages/RegulationsPage';
 import { ProtocolsPage } from './pages/ProtocolsPage';
+import { useState } from 'react';
+import BurgerMenu from './commonComponents/Header/BurgerMenu/BurgerMenu.tsx';
 
 function App() {
+  const [mobileMenuActive, setMobileMenuActive] = useState<boolean>(false);
+  
   return (
     <>
-      <Header />
+      <Header active={mobileMenuActive} setActive={setMobileMenuActive} />
       
       <main className="main">
         <Routes>
@@ -36,6 +40,8 @@ function App() {
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="*" element={<NotFoundPage /> } />
         </Routes>
+        
+        <BurgerMenu links={LINKS} shown={mobileMenuActive} />
       </main>
     
       <Footer />

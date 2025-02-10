@@ -51,7 +51,7 @@
   "widgets.pdfViewer.ofLabel": "of",
 
   "protocolsPage.heading": "Protocols",
-  "protocolsPage.viewer.heading": "You are currently viewing",
+  "protocolsPage.viewer.heading": "You are currently reading",
   "protocolsPage.viewer.closeButton": "Close",
   "protocolsPage.protocol.viewButton": "View"
 }

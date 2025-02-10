@@ -1,0 +1,32 @@
+.burger-button {
+  display: none;
+  border: none;
+  background-color: transparent;
+
+  &__line-1, &__line-2, &__line-3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    pointer-events: none;
+  }
+
+  &--active &__line-1, {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+
+  &--active &__line-2, {
+    opacity: 0;
+  }
+
+  &--active &__line-3, {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+}
+
+@media (max-width: 1220px) {
+  .burger-button {
+    display: inline-block;
+  }
+}
