@@ -63,7 +63,14 @@ export const OrderDocumentsPage: FC = () => {
       documentType: preparedDocs,
     }
     
-    OrderDocumentsApi.send(dataToSend).then(() => alert('Sent!!!'))
+    // TODO: modal window on order sent
+    OrderDocumentsApi.send(dataToSend)
+      .then(() => {
+        alert('Sent!!!');
+        
+        settersOfTheForm.forEach(setter => setter(''));
+      })
+      .catch((e) => alert(e))
   }
   
   return (
