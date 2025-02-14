@@ -24,5 +24,17 @@
 @media (max-width: 500px) {
   .form {
     margin-top: 24px;
+
+    &__heading {
+      font-size: 20px;
+    }
+
+    &__input {
+      margin-top: 12px;
+    }
+
+    &__button {
+      margin-top: 20px;
+    }
   }
 }

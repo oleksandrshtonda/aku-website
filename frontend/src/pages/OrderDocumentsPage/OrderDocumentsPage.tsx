@@ -31,8 +31,8 @@ export const OrderDocumentsPage: FC = () => {
   const [lang, setLang] = useState<string>(i18n.language);
   
   useEffect(() => {
-    const handleLanguageChange = (lng: string) => {
-      setLang(lng);
+    const handleLanguageChange = (lang: string) => {
+      setLang(lang);
     };
     
     i18n.on('languageChanged', handleLanguageChange);

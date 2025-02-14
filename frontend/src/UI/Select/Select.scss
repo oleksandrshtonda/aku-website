@@ -9,3 +9,9 @@
   color: #363636;
   background-color: #fff;
 }
+
+@media (max-width: 500px) {
+  .select {
+    font-size: 14px;
+  }
+}
