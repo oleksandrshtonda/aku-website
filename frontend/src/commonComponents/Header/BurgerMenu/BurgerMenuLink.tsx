@@ -36,8 +36,10 @@ const BurgerMenuLink: FC<Props> = ({
       {toggled && subLinks.length > 0 && (
         <ul className="item__sublinks">
           {subLinks.map(link => (
-            <li>
-              <a href={link.href}>{t(link.label)}</a>
+            <li key={link.href}>
+              <a href={link.href}>
+                {t(link.label)}
+              </a>
             </li>
           ))}
         </ul>

@@ -25,13 +25,15 @@
 
   & > ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
 .burger-nav {
   &__item {
     display: flex;
-    gap: 8px;
 
     .item {
       &__link {
@@ -45,10 +47,20 @@
         height: 20px;
       }
 
-      &__sublinks{
-        margin-top: 20px;
+      &__sublinks {
+        margin-top: 24px;
         margin-left: -60px;
         max-width: 200px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        & li a {
+          text-decoration: none;
+          color: #333;
+          font-size: 16px;
+        }
       }
     }
   }
