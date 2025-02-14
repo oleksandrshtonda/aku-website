@@ -1,11 +1,12 @@
-import './OrderDocumentsPage.scss';
-import { Input } from '../../UI/Input';
 import { FC, FormEvent, useEffect, useState } from 'react';
 import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+import './OrderDocumentsPage.scss';
+import { CustomerData, OrderDocumentsApi } from './api/orderDocuments.api.ts';
+
 import { Select } from '../../UI/Select';
 import { Button } from '../../UI/Button';
-import { useTranslation } from 'react-i18next';
-import { CustomerData, OrderDocumentsApi } from './api/orderDocuments.api.ts';
+import { Input } from '../../UI/Input';
 import { Popup } from '../../widgets/Popup';
 
 const docs = [
