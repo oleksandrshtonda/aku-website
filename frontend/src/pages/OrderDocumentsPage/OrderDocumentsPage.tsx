@@ -6,6 +6,7 @@ import { Select } from '../../UI/Select';
 import { Button } from '../../UI/Button';
 import { useTranslation } from 'react-i18next';
 import { CustomerData, OrderDocumentsApi } from './api/orderDocuments.api.ts';
+import { Popup } from '../../widgets/Popup';
 
 const docs = [
   { value: 'document.chooseLabel', label: 'document.chooseLabel', disabled: true, defaultValue: true },
@@ -26,7 +27,8 @@ export const OrderDocumentsPage: FC = () => {
   const [fatherName, setFatherName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
-  const [documentType, setDocumentType] = useState('document.chooseLabel');
+  const [documentType, setDocumentType] = useState<string>('document.chooseLabel');
+  const [modalIsShown, setModalIsShown] = useState<boolean>(false);
   
   const [lang, setLang] = useState<string>(i18n.language);
   
@@ -63,14 +65,12 @@ export const OrderDocumentsPage: FC = () => {
       documentType: preparedDocs,
     }
     
-    // TODO: modal window on order sent
     OrderDocumentsApi.send(dataToSend)
       .then(() => {
-        alert('Sent!!!');
-        
+        setModalIsShown(true);
         settersOfTheForm.forEach(setter => setter(''));
       })
-      .catch((e) => alert(e))
+      .catch((e) => alert(e));
   }
   
   return (
@@ -153,6 +153,21 @@ export const OrderDocumentsPage: FC = () => {
           {t('documentPage.order')}
         </Button>
       </form>
+      
+      {modalIsShown && (
+        <Popup closePopup={setModalIsShown} title={'Your order has been placed!'}>
+          <p>
+            Thank you very much for placing the order! <br />
+            Our staff will contact you soon. <br />
+          </p>
+          
+          <img
+            src="https://i.gifer.com/nTw.webp"
+            className="popup__dog-img"
+            alt="happy-dog"
+          />
+        </Popup>
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import './Popup.scss';
 import { Dispatch, FC, ReactNode, SetStateAction } from 'react';
+import './Popup.scss';
 
 interface Props {
   closePopup: Dispatch<SetStateAction<boolean>>;
@@ -19,22 +19,23 @@ export const Popup: FC<Props> = (
   }
   
   return (
-    <div className="popup">
-      <header className="popup__header">
-        <button
-          className="popup__close-button"
-          onClick={handleClosePopup}
-        >
-          X
-        </button>
-      </header>
-      
-      <h1 className="popup__heading">
-        {title}
-      </h1>
-      
-      <div className="popup__body">
-        {children}
+    <div className="popup-container">
+      <div className="popup">
+        <header className="popup__header">
+          <h2 className="popup__heading">
+            {title}
+          </h2>
+          
+          <button
+            className="popup__close-button"
+            onClick={handleClosePopup}
+          />
+        </header>
+        
+        
+        <div className="popup__body">
+          {children}
+        </div>
       </div>
     </div>
   );
