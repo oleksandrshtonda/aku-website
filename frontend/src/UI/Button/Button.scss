@@ -25,4 +25,9 @@
       background-color: #ffffff;
     }
   }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+  }
 }

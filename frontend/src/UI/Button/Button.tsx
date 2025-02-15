@@ -1,6 +1,7 @@
-import './Button.scss';
+import { FC, ReactNode } from 'react';
 import classNames from 'classnames';
-import { ReactNode } from 'react';
+import { TailSpin } from 'react-loader-spinner';
+import './Button.scss';
 
 type ButtonType = 'primary' | 'secondary';
 
@@ -10,9 +11,10 @@ interface Props {
   belongsTo?: string;
   children: ReactNode;
   submit: boolean;
+  loading?: boolean;
 }
 
-export const Button: React.FC<Props> = ({ callback, type, children, belongsTo, submit }) => {
+export const Button: FC<Props> = ({ callback, type, children, belongsTo, submit, loading }) => {
   const getClassName = () => {
     return classNames(
       {[`${belongsTo}__button`]: belongsTo && belongsTo?.length > 0},
@@ -28,7 +30,7 @@ export const Button: React.FC<Props> = ({ callback, type, children, belongsTo, s
       onClick={callback}
       type={submit ? 'submit' : 'button'}
     >
-      {children}
+      {loading ? <TailSpin height={21} color="#ffffff" wrapperClass="button__loader" /> : children}
     </button>
   );
 };

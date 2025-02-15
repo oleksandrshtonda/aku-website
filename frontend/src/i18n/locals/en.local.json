@@ -41,6 +41,10 @@
   "documentPage.field.phone": "Phone number",
   "documentPage.field.fatherName": "",
   "documentPage.order": "Order",
+  "documentPage.modal.success.heading": "Your order has been placed!",
+  "documentPage.modal.success.text": "Thank you very much for placing the order! <br />Our staff will contact you soon.",
+  "documentPage.modal.error.heading": "Oh... There is an error...",
+  "documentPage.modal.error.text": "Hm... Something was happened on our side... <br />Try to place the order again a little bit later...",
 
   "notFoundPage.label": "Oops... This page doesn't seem to exist...",
   "notFoundPage.button.text": "Go to the Home page",

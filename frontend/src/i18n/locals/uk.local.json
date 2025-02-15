@@ -41,6 +41,10 @@
   "documentPage.field.phone": "Номер телефону",
   "documentPage.field.fatherName": "По батькові",
   "documentPage.order": "Замовити",
+  "documentPage.modal.success.heading": "Ви замовили документ!",
+  "documentPage.modal.success.text": "Дякуємо Вам за замовлення :) <br />Наші співробітники вийдуть з Вами на зв'язок!",
+  "documentPage.modal.error.heading": "Ойой... Щось поломалось...",
+  "documentPage.modal.error.text": "Так-так... Щось в нас трапилось... <br />Спробуйте скласти замовлення трохи пізніше...",
 
   "notFoundPage.label": "Ой... Здається, сторінки не існує...",
   "notFoundPage.button.text": "Перейти на головну сторінку",

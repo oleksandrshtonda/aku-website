@@ -1,6 +1,6 @@
 import { FC, FormEvent, useEffect, useState } from 'react';
 import i18n from 'i18next';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import './OrderDocumentsPage.scss';
 import { CustomerData, OrderDocumentsApi } from './api/orderDocuments.api.ts';
 
@@ -21,6 +21,8 @@ const docs = [
   { value: 'document.certificateOfWorkingQualities', label: 'document.certificateOfWorkingQualities' },
 ];
 
+type status = '' | 'success' | 'error';
+
 export const OrderDocumentsPage: FC = () => {
   const { t } = useTranslation();
   const [name, setName] = useState<string>('');
@@ -29,8 +31,9 @@ export const OrderDocumentsPage: FC = () => {
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [documentType, setDocumentType] = useState<string>('document.chooseLabel');
-  const [modalIsShown, setModalIsShown] = useState<boolean>(false);
   
+  const [loading, setLoading] = useState<boolean>(false);
+  const [modalIsShown, setModalIsShown] = useState<status>('success');
   const [lang, setLang] = useState<string>(i18n.language);
   
   useEffect(() => {
@@ -49,6 +52,7 @@ export const OrderDocumentsPage: FC = () => {
     const settersOfTheForm = [setName, setSurname, setEmail, setPhone, setFatherName, setDocumentType];
     settersOfTheForm.forEach(setter => setter(v => v.trim()));
     event.preventDefault();
+    setLoading(true);
     
     if (documentType === 'document.chooseLabel') {
       alert('Choose a doc');
@@ -68,10 +72,11 @@ export const OrderDocumentsPage: FC = () => {
     
     OrderDocumentsApi.send(dataToSend)
       .then(() => {
-        setModalIsShown(true);
+        setModalIsShown('success');
         settersOfTheForm.forEach(setter => setter(''));
       })
-      .catch((e) => alert(e));
+      .catch(() => setModalIsShown('error'))
+      .finally(() => setLoading(false));
   }
   
   return (
@@ -150,20 +155,40 @@ export const OrderDocumentsPage: FC = () => {
           type="primary"
           belongsTo="form"
           submit={true}
+          loading={loading}
         >
           {t('documentPage.order')}
         </Button>
       </form>
       
-      {modalIsShown && (
-        <Popup closePopup={setModalIsShown} title={'Your order has been placed!'}>
+      {modalIsShown == 'success' && (
+        <Popup
+          closePopup={setModalIsShown}
+          title={t("documentPage.modal.success.heading")}
+        >
           <p>
-            Thank you very much for placing the order! <br />
-            Our staff will contact you soon. <br />
+            <Trans i18nKey="documentPage.modal.success.text" />
           </p>
           
           <img
             src="https://i.gifer.com/nTw.webp"
+            className="popup__dog-img"
+            alt="happy-dog"
+          />
+        </Popup>
+      )}
+      
+      {modalIsShown == 'error' && (
+        <Popup
+          closePopup={setModalIsShown}
+          title={t("documentPage.modal.error.heading")}
+        >
+          <p>
+            <Trans i18nKey="documentPage.modal.error.text" />
+          </p>
+          
+          <img
+            src="https://i.gifer.com/Xqg8.gif"
             className="popup__dog-img"
             alt="happy-dog"
           />

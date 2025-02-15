@@ -1,8 +1,12 @@
 import { Dispatch, FC, ReactNode, SetStateAction } from 'react';
 import './Popup.scss';
+import CIcon from '@coreui/icons-react';
+import { cilX } from '@coreui/icons';
+
+type status = '' | 'success' | 'error';
 
 interface Props {
-  closePopup: Dispatch<SetStateAction<boolean>>;
+  closePopup: Dispatch<SetStateAction<status>>;
   title: string;
   children: ReactNode;
 }
@@ -15,7 +19,7 @@ export const Popup: FC<Props> = (
   }
 ) => {
   const handleClosePopup = () => {
-    closePopup(false);
+    closePopup('');
   }
   
   return (
@@ -29,7 +33,9 @@ export const Popup: FC<Props> = (
           <button
             className="popup__close-button"
             onClick={handleClosePopup}
-          />
+          >
+            <CIcon icon={cilX}/>
+          </button>
         </header>
         
         
