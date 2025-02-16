@@ -1,4 +1,4 @@
-import './OfficialdomPage.scss';
+import './officialdom.page.scss';
 
 interface Props {}
 

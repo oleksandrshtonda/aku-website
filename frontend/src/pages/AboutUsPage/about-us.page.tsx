@@ -1,4 +1,4 @@
-import './AboutUsPage.scss';
+import './about-us.page.scss';
 
 interface Props {}
 

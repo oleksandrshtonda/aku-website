@@ -1,4 +1,4 @@
-import './ProtocolsPage.scss';
+import './protocols.page.scss';
 import { FC, useState } from 'react';
 import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';

@@ -1,1 +1,1 @@
-export * from './StructureOfOrganizationPage.tsx';
+export * from './structure-of-organization.page.tsx';

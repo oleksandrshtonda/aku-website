@@ -1,4 +1,4 @@
-import './StructureOfOrganizationPage.scss';
+import './structure-of-organization.page.scss';
 
 interface Props {}
 

@@ -15,7 +15,7 @@ export interface CustomerData {
   documentType: Document;
 }
 
-export class OrderDocumentsApi {
+export class OrderDocumentsService {
   static async send(data: CustomerData): Promise<boolean> {
     const options = {
       method: 'POST',

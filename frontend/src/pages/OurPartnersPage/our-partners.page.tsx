@@ -1,4 +1,4 @@
-import './OurPartnersPage.scss';
+import './our-partners.page.scss';
 
 interface Props {}
 

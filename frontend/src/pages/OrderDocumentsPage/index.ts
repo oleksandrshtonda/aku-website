@@ -1,1 +1,1 @@
-export * from './OrderDocumentsPage.tsx';
+export * from './order-documents.page.tsx';

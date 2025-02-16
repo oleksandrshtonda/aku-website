@@ -1,8 +1,8 @@
 import { FC, FormEvent, useEffect, useState } from 'react';
 import i18n from 'i18next';
 import { useTranslation, Trans } from 'react-i18next';
-import './OrderDocumentsPage.scss';
-import { CustomerData, OrderDocumentsApi } from './api/orderDocuments.api.ts';
+import './order-documents.page.scss';
+import { CustomerData, OrderDocumentsService } from './services/order-documents.service.ts';
 
 import { Select } from '../../UI/Select';
 import { Button } from '../../UI/Button';
@@ -60,7 +60,7 @@ export const OrderDocumentsPage: FC = () => {
       return;
     }
     
-    const preparedDocs = OrderDocumentsApi.transformDoc(documentType);
+    const preparedDocs = OrderDocumentsService.transformDoc(documentType);
     const dataToSend: CustomerData = {
       name,
       surname,
@@ -70,7 +70,7 @@ export const OrderDocumentsPage: FC = () => {
       documentType: preparedDocs,
     }
     
-    OrderDocumentsApi.send(dataToSend)
+    OrderDocumentsService.send(dataToSend)
       .then(() => {
         setModalIsShown('success');
         settersOfTheForm.forEach(setter => setter(''));
