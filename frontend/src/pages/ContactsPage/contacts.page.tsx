@@ -1,4 +1,4 @@
-import './ContactsPage.scss';
+import './contacts.page.scss';
 
 interface Props {}
 

@@ -1,4 +1,4 @@
-import './NewsPage.scss';
+import './news.page.scss';
 
 interface Props {}
 

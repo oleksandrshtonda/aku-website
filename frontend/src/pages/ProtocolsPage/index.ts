@@ -1,1 +1,1 @@
-export * from './ProtocolsPage.tsx';
+export * from './protocols.page.tsx';

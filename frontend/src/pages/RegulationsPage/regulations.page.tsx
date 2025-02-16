@@ -1,4 +1,4 @@
-import './RegulationsPage.scss';
+import './regulations.page.scss';
 import { FC, useState } from 'react';
 import { PDFViewer } from '../../widgets/PDFViewer';
 import { useTranslation } from 'react-i18next';

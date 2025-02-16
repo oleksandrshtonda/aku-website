@@ -1,4 +1,4 @@
-import './MainPage.scss';
+import './main.page.scss';
 
 interface Props {}
 

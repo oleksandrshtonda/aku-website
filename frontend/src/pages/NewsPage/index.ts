@@ -1,1 +1,1 @@
-export * from './NewsPage.tsx';
+export * from './news.page.tsx';
