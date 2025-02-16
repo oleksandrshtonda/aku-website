@@ -33,7 +33,7 @@ export const OrderDocumentsPage: FC = () => {
   const [documentType, setDocumentType] = useState<string>('document.chooseLabel');
   
   const [loading, setLoading] = useState<boolean>(false);
-  const [modalIsShown, setModalIsShown] = useState<status>('success');
+  const [modalIsShown, setModalIsShown] = useState<status>('');
   const [lang, setLang] = useState<string>(i18n.language);
   
   useEffect(() => {
@@ -49,10 +49,20 @@ export const OrderDocumentsPage: FC = () => {
   }, []);
   
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    const settersOfTheForm = [setName, setSurname, setEmail, setPhone, setFatherName, setDocumentType];
-    settersOfTheForm.forEach(setter => setter(v => v.trim()));
     event.preventDefault();
+    
+    if (loading) {
+      return;
+    }
+    
+    const settersOfTheForm = [setName, setSurname, setEmail, setPhone, setFatherName];
+    settersOfTheForm.forEach(setter => setter(v => v.trim()));
     setLoading(true);
+    
+    const timer = setTimeout(() => {
+      setLoading(false);
+      setModalIsShown('error');
+    }, 5000)
     
     if (documentType === 'document.chooseLabel') {
       alert('Choose a doc');
@@ -74,9 +84,13 @@ export const OrderDocumentsPage: FC = () => {
       .then(() => {
         setModalIsShown('success');
         settersOfTheForm.forEach(setter => setter(''));
+        setDocumentType('document.chooseLabel');
       })
       .catch(() => setModalIsShown('error'))
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        clearTimeout(timer);
+      });
   }
   
   return (
