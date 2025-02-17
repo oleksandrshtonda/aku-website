@@ -1,6 +1,5 @@
 import './protocols.page.scss';
 import { FC, useState } from 'react';
-import { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 import regulationsUkUrl from '../../documents/pdf/statut_uk.pdf';
@@ -8,8 +7,9 @@ import regulationsEnUrl from '../../documents/pdf/statut_en.pdf';
 
 import { Button } from '../../UI/Button';
 import { PDFViewer } from '../../widgets/PDFViewer';
+import { renderDocs } from './renderCardDocs.tsx';
 
-interface LinkToDoc {
+export interface LinkToDoc {
   en: { label: string; url: string; }
   uk: { label: string; url: string; }
   key: string;
@@ -32,26 +32,6 @@ const docs: LinkToDoc[] = [
 const getUrlByKey = (key: LinkToDoc['key']): LinkToDoc => {
   return docs.find(doc => doc.key === key) as unknown as LinkToDoc;
 }
-
-const renderDocs = (
-  doc: LinkToDoc,
-  callBackForButton: (key: LinkToDoc['key']) => void,
-  t: TFunction<"translation", undefined>,
-  lang: 'en' | 'uk'
-) => (
-  <article className="links-to-documents__link link" key={doc.key}>
-    <h2 className="link__label">{doc[lang].label}</h2>
-    
-    <Button
-      callback={() => callBackForButton(doc.key)}
-      type={'primary'}
-      submit={false}
-      belongsTo="link"
-    >
-      {t("protocolsPage.protocol.viewButton")}
-    </Button>
-  </article>
-)
 
 export const ProtocolsPage: FC = () => {
   const [ currentDoc, setCurrentDoc ] = useState<string | null>(null);

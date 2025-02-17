@@ -14,7 +14,8 @@ html {
 body {
   display: flex;
   min-height: 100vh;
-  background: #C7E7FD;
+  /*background: #C7E7FD;*/
+  background: #fff2eb;
 }
 
 #root {
@@ -34,4 +35,8 @@ body {
   .main {
     max-width: 1000px;
   }
+}
+
+.header, .footer {
+  background-color: #ffc5a3;
 }
