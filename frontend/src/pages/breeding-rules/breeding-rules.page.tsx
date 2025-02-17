@@ -1,9 +1,14 @@
 import './breeding-rules.page.scss';
+import { useTranslation } from 'react-i18next';
 
 export const BreedingRulesPage = () => {
+  const { t } = useTranslation();
+  
   return (
     <div style={{ maxWidth: '800px' }}>
-      <h1>Breeding Rules</h1>
+      <h1 style={{ textAlign: 'center', marginBottom: '32px' }}>
+        { t('header.navigation.officialdom.breedingRules') }
+      </h1>
       
       <div>
         Ці Правила встановлюють і регламентують порядок оформлення та отримання племінних документів на послід цуценят, народження яких зареєстровано в організаціях-членах WBF
