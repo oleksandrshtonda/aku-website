@@ -27,13 +27,14 @@ body {
 .main {
   flex-grow: 1;
   padding: 120px 40px 24px;
-  max-width: 1400px;
+  width: 960px;
   margin: 0 auto;
+  background-color: #ffe5d6;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 960px) {
   .main {
-    max-width: 1000px;
+    width: 100%;
   }
 }
 

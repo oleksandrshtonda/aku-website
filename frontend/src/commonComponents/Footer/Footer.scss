@@ -3,9 +3,9 @@
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
+  width: 960px;
   height: 100px;
-  margin-top: auto;
+  margin: auto auto 0;
   padding: 0 48px;
 
   //background-color: #75C7FA;
@@ -20,12 +20,24 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 960px) {
   .footer {
-    padding: 0 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .footer {
+    justify-content: center;
   }
 
   .author {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 0 24px;
   }
 }
