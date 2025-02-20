@@ -12,7 +12,6 @@ import { ContactsPage } from './pages/ContactsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { StructureOfOrganizationPage } from './pages/StructureOfOrganizationPage';
 import { AboutUsPage } from './pages/AboutUsPage';
-import { RegulationsPage } from './pages/RegulationsPage';
 import { ProtocolsPage } from './pages/ProtocolsPage';
 import { useState } from 'react';
 import BurgerMenu from './commonComponents/Header/BurgerMenu/BurgerMenu.tsx';
@@ -26,12 +25,13 @@ function App() {
       <Header active={mobileMenuActive} setActive={setMobileMenuActive} />
       
       <main className="main">
+        {mobileMenuActive && <p>hehe</p>}
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/officialdom">
             <Route path="" element={<OfficialdomPage />} />
-            <Route path="regulations" element={<RegulationsPage />} />
+            <Route path="regulations" element={<ProtocolsPage initShowRegulations={true} />} />
             <Route path="protocols" element={<ProtocolsPage />} />
             <Route path="breeding-rules" element={<BreedingRulesPage />} />
           </Route>

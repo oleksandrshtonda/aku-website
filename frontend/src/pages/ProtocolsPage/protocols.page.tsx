@@ -8,6 +8,7 @@ import regulationsEnUrl from '../../documents/pdf/statut_en.pdf';
 import { Button } from '../../UI/Button';
 import { PDFViewer } from '../../widgets/PDFViewer';
 import { renderDocs } from './renderCardDocs.tsx';
+import { useNavigate } from 'react-router-dom';
 
 export interface LinkToDoc {
   en: { label: string; url: string; }
@@ -33,12 +34,21 @@ const getUrlByKey = (key: LinkToDoc['key']): LinkToDoc => {
   return docs.find(doc => doc.key === key) as unknown as LinkToDoc;
 }
 
-export const ProtocolsPage: FC = () => {
-  const [ currentDoc, setCurrentDoc ] = useState<string | null>(null);
+interface Props {
+  initShowRegulations?: boolean;
+}
+
+export const ProtocolsPage: FC<Props> = ({ initShowRegulations }) => {
+  const [ currentDoc, setCurrentDoc ] = useState<string | null>(initShowRegulations ? 'regulations' : null);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const lang = i18n.language as 'en' | 'uk';
   
   const onClickHandler = (key: string | null): void => {
+    if (initShowRegulations) {
+      navigate('/officialdom/protocols')
+    }
+    
     setCurrentDoc(key);
   }
   
