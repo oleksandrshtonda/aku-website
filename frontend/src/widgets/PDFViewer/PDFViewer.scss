@@ -21,14 +21,23 @@
 
   button {
     padding: 16px;
-    //border: none;
-
-    //&:first-child:hover {
-    //  background-color: #dfdfdf;
-    //}
   }
 
   span {
     padding-top: 16px;
   }
 }
+//
+//@media (max-width: 670px) {
+//  .react-pdf__Page {
+//    &__canvas {
+//      //height: 500px;
+//      //width: 100% !important;
+//    }
+//  }
+//
+//  .react-pdf__Page.document {
+//    //height: 500px;
+//    //width: 100% !important;
+//  }
+//}

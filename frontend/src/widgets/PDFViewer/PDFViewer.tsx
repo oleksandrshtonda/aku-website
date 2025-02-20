@@ -1,7 +1,7 @@
 import './PDFViewer.scss';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../UI/Button';
@@ -11,20 +11,18 @@ interface Props {
   uriToPDF: string,
 }
 
+const calculateSize = (screenWidth: number): number => {
+  return screenWidth - 80;
+}
+
 export const PDFViewer: FC<Props> = ({ uriToPDF }) => {
   const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageHeight, setPageHeight] = useState<number | null>(null);
-  const [pageWidth, setPageWidth] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [width, setWidth] = useState(calculateSize(960));
   const { t } = useTranslation();
   
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
-  };
-  
-  const onPageLoadSuccess = (page: any) => {
-    setPageHeight(page.height);
-    setPageWidth(page.width);
   };
   
   const goToNextPage = () => {
@@ -35,15 +33,31 @@ export const PDFViewer: FC<Props> = ({ uriToPDF }) => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
   
-  const stylesForDoc = {
-    height: pageHeight ? pageHeight + 101 : 'unset',
-    width: pageWidth ? pageWidth : 'unset',
-  }
+  useEffect(() => {
+    const updateWidth = () => {
+      const mainElement = document.querySelector(".main");
+      
+      if (mainElement) {
+        const newWidth = mainElement.clientWidth;
+        console.log("Ширина main:", newWidth);
+        setWidth(calculateSize(newWidth));
+      }
+    };
+    
+    const handleResize = () => {
+      clearTimeout((window as any).resizeTimer);
+      (window as any).resizeTimer = setTimeout(updateWidth, 100);
+    };
+    
+    updateWidth();
+    window.addEventListener("resize", handleResize);
+    
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   
   return (
     <div
       className="pdf-viewer"
-      style={stylesForDoc}
     >
       <div className="pagination-controls">
         <Button callback={goToPrevPage} type={'secondary'} submit={false}>
@@ -68,8 +82,9 @@ export const PDFViewer: FC<Props> = ({ uriToPDF }) => {
       >
         <Page
           pageNumber={currentPage}
-          onLoadSuccess={onPageLoadSuccess}
-          renderTextLayer={true}
+          renderTextLayer={false}
+          renderAnnotationLayer={false}
+          width={width}
           loading={<LoaderBox loaderType="falling-lines" />}
         />
       </Document>

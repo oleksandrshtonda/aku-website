@@ -52,7 +52,7 @@ export const Select: React.FC<Props> = (
           key={index}
           value={item.value}
           disabled={item?.disabled || false}
-          selected={item?.defaultValue || false}
+          // selected={item?.defaultValue || false}
         >
           {t(item.label)}
         </option>
